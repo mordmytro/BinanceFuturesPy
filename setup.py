@@ -11,6 +11,6 @@ setup(name='BinanceFuturesPy',
       url='https://github.com/morozdima/BinanceFuturesPy',
       download_url='https://github.com/morozdima/BinanceFuturesPy/archive/master.zip',
       license='MIT',
-      install_requires=['websocket-client', 'requests', 'hmac', 'hashlib', 'pandas'],
+      install_requires=['websocket-client', 'requests', 'hmac', 'pandas'],
       packages=find_packages()
       )
