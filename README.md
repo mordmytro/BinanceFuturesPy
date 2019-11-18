@@ -5,6 +5,9 @@ That library contains just a description of code.
 If you want to know what does certain function use and returns you can find more on
     https://binance-docs.github.io/apidocs/futures/en
 
+To install via pip:
+    pip install git+https://github.com/morozdima/BinanceFuturesPy.git
+
 # Example
 Make a new order:
 
