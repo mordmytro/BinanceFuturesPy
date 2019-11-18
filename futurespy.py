@@ -176,55 +176,6 @@ class MarketData:
             return requests.get(f'{self.http_way}ticker/bookTicker?symbol={self.symbol}').json()
         else:
             return requests.get(f'{self.http_way}ticker/bookTicker').json()
-    
-    
-    
-    def last_30_days_candles(self):
-        limit = 1440
-        
-        one_hour_in_milliseconds = 3600000
-        one_day_in_milliseconds = one_hour_in_milliseconds * 24
-        days = 30
-
-        startTime = int(round(time.time() * 1000)) - (one_day_in_milliseconds * 30)
-
-        data = []
-
-        for k in range(days): 
-            r = requests.get(f"{self.http_way}klines?symbol={self.symbol}&interval={self.interval}&limit={limit}&starttime={startTime}")
-            startTime += one_day_in_milliseconds
-            response = r.json()
-
-            for i in range(len(response)):
-                data.append(response[i])
-            stdout.write(f'\r{k + 1} of {days}')
-            stdout.flush()
-        print('\n')
-
-        last_req = requests.get(f"{self.http_way}klines?symbol={self.symbol}&interval={self.interval}&limit=1")
-        last_res = last_req.json()
-        last_res = last_res[0]
-        
-        if last_res[0] != data[-1][0]:
-            print("New candle added!")
-
-            data.append(last_res)
-            del data[0]
-
-        df = pd.DataFrame(data)
-        df = df.iloc[:, :6]
-        df.columns = (['Date', 'Open', 'High', 'Low', 'Close', 'Volume'])
-
-        df['Date'] = pd.to_datetime(df['Date'], unit='ms')
-        df['Date'] = df['Date'].map(lambda x: x.strftime("%Y-%m-%d %H:%M"))
-        
-        df = df.astype({'Open' : 'float64',
-                   'High' : 'float64',
-                   'Low' : 'float64',
-                   'Close' : 'float64',
-                   'Volume' : 'float64'})
-
-        return df
 
 
 
