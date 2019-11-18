@@ -5,9 +5,12 @@ That library contains just a description of code.
 If you want to know what does certain function use and returns you can find more on
     https://binance-docs.github.io/apidocs/futures/en
 
-To install via pip:
-    
-    pip install git+https://github.com/morozdima/BinanceFuturesPy.git
+To install Python package from github, you need to clone that repository.
+
+    git clone https://github.com/morozdima/BinanceFuturesPy.git
+Then just run the setup.py file from that directory,
+
+    sudo python setup.py install
 
 # Example
 Make a new order:
