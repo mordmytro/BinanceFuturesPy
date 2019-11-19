@@ -1,0 +1,7 @@
+README.md
+futurespy.py
+setup.py
+BinanceFuturesPy.egg-info/PKG-INFO
+BinanceFuturesPy.egg-info/SOURCES.txt
+BinanceFuturesPy.egg-info/dependency_links.txt
+BinanceFuturesPy.egg-info/top_level.txt
