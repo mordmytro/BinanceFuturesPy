@@ -23,7 +23,7 @@ secret_key = '398E491767030BD8A2FF6EA6D0BCB862'
 
 client = Client(api_key=api_key, 
                 sec_key=secret_key,
-                symbol='BTCUSDT,
+                symbol='BTCUSDT',
                 testnet=False)
 
 client.new_order(side='BUY',
