@@ -1,8 +1,6 @@
 # Binance Futures API library for Python
 Python library for Binance Futures and Binance Futures Testnet
 
-### (Updates will be available at the 2022 or never)
-
 That library contains just a description of code.
 If you want to know what does certain function use and returns you can find more on
     https://binance-docs.github.io/apidocs/futures/en
